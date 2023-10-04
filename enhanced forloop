@@ -1,0 +1,14 @@
+for simple array
+
+ for(int i: nums)
+     syso(i);
+------------------------------------------------------------------
+for two dimentional array
+
+for(int n[] : nums)  // to get the first row of array
+ {
+   for(int m:n)      // for accessing the each element in that array
+   {
+      syso(m);
+    }  
+  }  
