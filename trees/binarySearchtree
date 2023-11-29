@@ -1,0 +1,63 @@
+package s.p;
+
+public class binarysearchtree {
+	Node root;
+	class Node{
+		int val;
+		Node right ,left;
+		
+		public Node(int val)
+		{
+			this.val=val;
+			left = right = null;
+		}
+	}
+ 
+	public binarysearchtree(int i) {
+		// TODO Auto-generated constructor stub
+		root=new Node(i);
+		
+	}
+	void insert(int key) {
+        insert(root, key);
+    }
+	
+	Node insert (Node root, int key)
+	{
+		
+		if(root == null)
+		{
+			root=new Node(key);
+			return root;
+		}
+		if(root.val<key)
+		{
+			root.right=insert(root.right,key);
+		}
+		else if(root.val>key)
+		{
+			root.left=insert(root.left,key);
+		}
+		return root;
+	}
+	
+	  void inorderTraversal(Node root) {
+	        if (root != null) {
+	            inorderTraversal(root.left);
+	            System.out.print(root.val + " ");
+	            inorderTraversal(root.right);
+	        }
+	    }
+	
+	public static void main(String[] args) {
+	 binarysearchtree tree = new binarysearchtree(2);
+	 tree.insert(12);
+	 tree.insert(13);
+	 tree.insert(11);
+	 tree.insert(12);
+	 tree.insert(10);
+	 tree.inorderTraversal(tree.root);
+			
+	}
+
+}
